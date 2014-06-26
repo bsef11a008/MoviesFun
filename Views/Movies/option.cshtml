@@ -1,0 +1,64 @@
+﻿
+
+
+
+<div id="templatemo_middle">
+    <div id="mid_title">
+
+    </div>
+
+    <p></p>
+
+    <div id="learn_more"></div>
+
+    <div class="cleaner"></div>
+</div> <!-- end of middle -->
+
+<div id="templatemo_main">
+    <div class="col_w960">
+
+        <div class="col_w450 float_l">
+            <h2>Its Fun Place</h2>
+
+            <form action="/Movies/Add" method="post">
+                <footer>
+                    <input type="submit" class="btnLogin" value="Add A New Movie" style="background-color:lightgreen" />
+                    <br><br>
+                </footer>
+            </form>
+            <form action="/Movies/upd" method="post">
+                <footer>
+                    <input type="text" name="name" placeholder="Movie Name" required=required />
+                    <input type="submit" class="btnLogin" value="Update Movie" style="background-color:lightgreen" />
+                    <br><br>
+                </footer>
+            </form>
+            <form action="/Movies/Delete" method="post">
+                <footer>
+                    <input type="text" name="name" placeholder="Movie Name" required=required />
+                    <input type="submit" class="btnLogin" value="Delete Movie" style="background-color:lightgreen" />
+                    <br><br>
+                </footer>
+            </form>
+
+        </div>
+
+        <div class="col_w450 float_r">
+            <form action="/Home/signout" method="post">
+                <button id="s" value="S">SignOut</button>
+            </form>
+            <h2>Latest Movies</h2>
+            <ul class="lp_frontpage">
+                <li><a href="#"><img width="200" height="100" src="~/images/waar1.jpg" alt="Image 01" /></a></li>
+                <li><a href="#"><img width="200" height="100" src="~/images/the wolf of wall street.jpg" alt="Image 02" /></a></li>
+                <li><a href="#"><img width="200" height="100" src="~/images/high way.jpg" alt="image 03" /></a></li>
+                <li><a href="#"><img width="200" height="100" src="~/images/RamLeela.jpg" alt="image 04" /></a></li>
+            </ul>
+
+            <div class="cleaner"></div>
+
+        </div>
+
+        <div class="cleaner"></div>
+    </div>
+

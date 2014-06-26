@@ -1,0 +1,169 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>All About Movies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="black wall, free CSS template, dark wooden strips, templatemo" />
+    <meta name="description" content="Black Wall - free CSS template from templatemo.com" />
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            $('#search1').click(function () {
+              
+               
+                $.getJSON("/Home/searchMovie?name=" + $('#name').val(), function (data) {
+                    
+                    $('#di').empty();
+                    $('#di').append('<img src=/Images/' + data.Image + ' height=200  width=200/>');
+                    $('#di').append("<br>");
+                    $('#di').append('<video src=/Trailors/' + data.Trailor +' controls></video>');
+                    $('#di').append("<br>");
+                    $('#di').append("Name:");
+                    $('#di').append(data.Name);
+                    $('#di').append("<br>");
+                    $('#di').append("Year:");
+                    $('#di').append(data.Year);
+                    $('#di').append("<br>");
+                    $('#di').append("Director:");
+                    $('#di').append(data.Director);
+                    $('#di').append("<br>");
+                    $('#di').append("Producer:");
+                    $('#di').append(data.Producer);
+                    $('#di').append("<br>");
+                    $('#di').append("Actors:");
+                    $('#di').append(data.Actors);
+                    $('#di').append("<br>");
+                    $('#di').append("Music:");
+                    $('#di').append(data.Music);
+                    $('#di').append("<br>");
+                    $('#di').append("Budget:");
+                    $('#di').append(data.Budget);
+                    $('#di').append("<br>");
+                    $('#di').append("Revenue:");
+                    $('#di').append(data.Revenue);
+
+                });
+            });
+        });
+
+        
+    </script>
+</head>
+<body>
+    <div id="templatemo_wrapper">
+
+        <div id="templatemo_header">
+
+            <div id="templatemo_menu">
+                <ul>
+                    <h1>All About Movies</h1>
+
+                </ul>
+            </div> <!-- end of templatemo_menu -->
+
+            <img src="~/images/img1.jpg" />
+        </div> <!-- end of header -->
+
+
+
+        <div id="templatemo_middle">
+            <div id="mid_title">
+
+            </div>
+
+            <p></p>
+
+            <div id="learn_more"></div>
+
+            <div class="cleaner"></div>
+        </div> <!-- end of middle -->
+
+        <div id="templatemo_main">
+            <div class="col_w960">
+                
+
+                    <div class="col_w450 float_l">
+                        <h2>Its Fun Place</h2>
+                        <p><em>Now That You Have Signed in, Just start exploring the fun</em></p>
+
+                        <form>
+
+                            <label>Movie</label>
+                            <br />
+                            <input type="text" id="name" placeholder="Movie Name" required=required />
+                            <br />
+                            <footer>
+
+                                <input type="button" id="search1"  value="Search"/>
+
+                                <br /><br />
+
+                            </footer>
+                        </form>
+                        <div id="di"></div>
+                    </div>
+
+                    <div class="col_w450 float_r">
+                        <form action="/Home/signout" method="post">
+                            <button id="s" value="S">SignOut</button>
+                        </form>
+                        <h2>Latest Movies</h2>
+                        <ul class="lp_frontpage">
+                            <li><a href="#"><img width="200" height="100" src="~/images/waar1.jpg" alt="Image 01" /></a></li>
+                            <li><a href="#"><img width="200" height="100" src="~/images/the wolf of wall street.jpg" alt="Image 02" /></a></li>
+                            <li><a href="#"><img width="200" height="100" src="~/images/high way.jpg" alt="image 03" /></a></li>
+                            <li><a href="#"><img width="200" height="100" src="~/images/agora.jpg" alt="image 04" /></a></li>
+                        </ul>
+
+                        <div class="cleaner"></div>
+
+                    </div>
+
+                    <div class="cleaner"></div>
+                   
+               
+
+            <div class="col_w960 col_last">
+                <div class="col_allw300 frontpage_box">
+                    <h2>About us<span></span></h2>
+                    <p>Just a new addition in the field, mission is, to explore.</p>
+
+                </div>
+
+                <div class="col_allw300 frontpage_box">
+                    <h2>Contact us<span></span></h2>
+                    <p>Contact num: 923344223711</p>
+                    <p>email us at bsef11a008@pucit.edu.pk</p>
+
+
+                </div>
+
+                <div class="col_allw300 frontpage_box col_last">
+                    <h2>Customer Support<span></span></h2>
+                    <p>If you are facing any problem related to this website, just contact us.</p>
+
+                </div>
+
+                <div class="cleaner"></div>
+            </div>
+
+        </div> <!-- end of main -->
+    </div> <!-- end of wrapper -->
+
+    <div id="templatemo_footer_wrapper">
+        <div id="templatemo_footer">
+
+            Copyright © 2014 <a> All Rights Reserved</a>
+
+        </div> <!-- end of templatemo_footer -->
+    </div>
+
+</body>
+</html>
